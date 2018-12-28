@@ -3,6 +3,6 @@
 ## Exécution d'un playbook
 
 ```bash
-ansible-playbook -bK base.yml --check --diff
+ansible-playbook -bK local.yml --check --diff
 ```
 

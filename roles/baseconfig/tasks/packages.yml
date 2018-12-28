@@ -1,40 +1,57 @@
 ---
-- name: Install basic tools
+- name: Install common packages
   when: ansible_os_family == "Debian"
   apt:
     name: "{{ item }}"
     state: present
     update_cache: yes
-  with_items:
-    - bash-completion
-    - zsh
-    - sudo
-    - git
-    - nano
-    - vim
-    - htop
-    - less
-    - tree
-    - ipython3
+  with_items: "{{ common_packages }}"
+
+- name: Remove useless packages
+  when: ansible_os_family == "Debian"
+  apt:
+    name: "{{ item }}"
+    state: absent
+  with_items: "{{ useless_packages }}"
 
 - name: Install LaTeX
   when: ansible_os_family == "Debian"
   apt:
     name: "{{ item }}"
     state: present
+  with_items: "{{ latex_packages }}"
+
+- name: Install desktop tools
+  when: ansible_os_family == "Debian"
+  apt:
+    name: "{{ item }}"
+    state: present
   with_items:
-    - texlive-base
-    - texlive-binaries
-    - texlive-extra-utils
-    - texlive-fonts-recommended
-    - texlive-lang-french
-    - texlive-lang-greek
-    - texlive-latex-base
-    - texlive-latex-extra
-    - texlive-latex-recommended
-    - texlive-pictures
-    - texlive-science
-    - texlive-xetex
-    - tex-common
-    - tex-gyre
+    - build-essential
+    - gparted
+    - vlc
+    - gnome-calculator
+    - gnome-characters
+    - gnome-logs
+    - gnome-system-monitor
+
+- name: Install Thunderbird
+  when: ansible_os_family == "Debian"
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - thunderbird
+    - thunderbird-locale-en
+    - thunderbird-locale-fr
+
+- name: Install Firefox
+  when: ansible_os_family == "Debian"
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - firefox
+    - firefox-locale-en
+    - firefox-locale-fr
 

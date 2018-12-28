@@ -1,0 +1,63 @@
+---
+# Packages on all devices
+common_packages:
+  - bash-completion
+  - zsh
+  - sudo
+  - git
+  - nano
+  - vim
+  - htop
+  - less
+  - tree
+  - unzip
+  - unrar
+  # Python 3
+  - python3
+  - python3-ipython
+  - python3-matplotlib
+  - python3-numpy
+  - python3-pyqt5
+  - python3-serial
+  # Creativity
+  - gimp
+  - audacity
+  - inkscape
+  - musescore
+  # Desktop tools
+  - pavucontrol
+  - paprefs
+  - keepassxc
+  # Security
+  - binwalk
+
+# Packages that should not be on any devices
+useless_packages:
+  - deja-dup
+  - shotwell
+  - shotwell-common
+  - totem
+  - totem-common
+  - totem-plugins
+  # Bug reporting tool
+  - apport
+  - apport-gtk
+  - apport-symptoms
+
+# LaTeX packages
+latex_packages:
+  - texlive-base
+  - texlive-binaries
+  - texlive-extra-utils
+  - texlive-fonts-recommended
+  - texlive-lang-french
+  - texlive-lang-greek
+  - texlive-latex-base
+  - texlive-latex-extra
+  - texlive-latex-recommended
+  - texlive-pictures
+  - texlive-science
+  - texlive-xetex
+  - tex-common
+  - tex-gyre
+
