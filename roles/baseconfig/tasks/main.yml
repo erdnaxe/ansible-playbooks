@@ -1,0 +1,13 @@
+---
+# Patriotisme
+- name: Ensure French UTF-8 locale exists
+  locale_gen:
+    name: fr_FR.UTF-8
+    state: present
+
+# Configure packages mirrors
+- include_tasks: mirrors.yml
+
+# Install packages
+- include_tasks: packages.yml
+

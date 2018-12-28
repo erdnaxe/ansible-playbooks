@@ -1,0 +1,7 @@
+---
+
+# Only configure localhost for now
+- hosts: localhost
+  roles:
+   - baseconfig
+

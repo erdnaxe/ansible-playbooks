@@ -1,0 +1,40 @@
+---
+- name: Install basic tools
+  when: ansible_os_family == "Debian"
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  with_items:
+    - bash-completion
+    - zsh
+    - sudo
+    - git
+    - nano
+    - vim
+    - htop
+    - less
+    - tree
+    - ipython3
+
+- name: Install LaTeX
+  when: ansible_os_family == "Debian"
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - texlive-base
+    - texlive-binaries
+    - texlive-extra-utils
+    - texlive-fonts-recommended
+    - texlive-lang-french
+    - texlive-lang-greek
+    - texlive-latex-base
+    - texlive-latex-extra
+    - texlive-latex-recommended
+    - texlive-pictures
+    - texlive-science
+    - texlive-xetex
+    - tex-common
+    - tex-gyre
+
